@@ -1680,6 +1680,3 @@ $api->postApiV1EwalletAuths($content_type, $body, $signature, $signature_method,
 Get Wallet Payment Methods
 
 
-
-
-Process finished with exit code 0
