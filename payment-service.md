@@ -22,7 +22,7 @@ Version: 2.0
 # Get ewallet payment instrument with user access token
 
 
-null
+Get ewallet Payment Instrument with user access token additional description here
 
 ## null
 ```shell
@@ -103,7 +103,7 @@ $api->getApiV1EwalletInstruments($content_type, $signature, $signature_method, $
 # Paying with user access token and payment identifier
 
 
-null
+Paying with user access token and payment identifier additional description here
 
 ## null
 ```shell
@@ -184,7 +184,7 @@ $api->postApiV1EwalletPurchases($content_type, $signature, $signature_method, $t
 # Ewallet service status
 
 
-null
+Ewallet Service Status additional description here
 
 ## null
 ```shell
@@ -265,7 +265,7 @@ $api->getApiV1EwalletStatus($content_type, $signature, $signature_method, $times
 # Generate processor access token
 
 
-null
+Generate Processor Access Token additional description here
 
 ## null
 ```shell
@@ -339,7 +339,7 @@ $api->postPassportOauthToken($authorization);
 # Purchase service status
 
 
-null
+Purchase Service Status additional description here
 
 ## null
 ```shell
@@ -421,7 +421,7 @@ $api->getApiV1PurchasesStatus($content_type, $signature, $signature_method, $tim
 # Get user access token
 
 
-null
+Get User Access Token additional description here
 
 ## null
 ```shell
@@ -502,7 +502,7 @@ $api->postApiV1EwalletAuths($content_type, $signature, $signature_method, $times
 # Processor payment 
 
 
-null
+Processor Payment  additional description here
 
 ## null
 ```shell
@@ -583,7 +583,7 @@ $api->postApiV1Purchases($content_type, $signature, $signature_method, $timestam
 # Get transaction status
 
 
-null
+Get transaction status additional description here
 
 ## null
 ```shell
@@ -666,7 +666,7 @@ $api->getApiV1Purchases($content_type, $signature, $signature_method, $timestamp
 # Processor otp complete transaction
 
 
-null
+Processor OTP complete transaction additional description here
 
 ## null
 ```shell
@@ -747,7 +747,7 @@ $api->postApiV1PurchasesOtpsAuths($content_type, $signature, $signature_method, 
 # Processor validate card
 
 
-null
+Processor validate card additional description here
 
 ## null
 ```shell
@@ -828,7 +828,7 @@ $api->postApiV1PurchasesValidations($content_type, $signature, $signature_method
 # Gateway payment without otp
 
 
-null
+Gateway Payment without OTP additional description here
 
 ## null
 ```shell
@@ -909,7 +909,7 @@ $api->postApiV1PaymentGatewayPurchase($content_type, $signature, $signature_meth
 # Webpay
 
 
-null
+Webpay additional description here
 
 ## null
 ```shell
@@ -987,7 +987,7 @@ $api->postWebpayApiV2PayJson($content_type, $authorization, $terminal_id, $body)
 # Payment v2
 
 
-null
+Payment V2 additional description here
 
 ## null
 ```shell
@@ -1068,7 +1068,7 @@ $api->postApiV2Purchases($signature, $signature_method, $timestamp, $nonce, $aut
 # Payment otp v2
 
 
-null
+Payment OTP V2 additional description here
 
 ## null
 ```shell
@@ -1149,7 +1149,7 @@ $api->postApiV2PurchasesOtpsAuths($content_type, $signature, $signature_method, 
 # Validation v2
 
 
-null
+Validation V2 additional description here
 
 ## null
 ```shell
@@ -1230,7 +1230,7 @@ $api->postApiV2PurchasesValidations($content_type, $signature, $signature_method
 # Validation otp v2
 
 
-null
+Validation OTP V2 additional description here
 
 ## null
 ```shell
@@ -1311,7 +1311,7 @@ $api->postApiV2PurchasesValidationsOtpsAuths($content_type, $signature, $signatu
 # Payment otp auto enroll
 
 
-null
+Payment OTP Auto Enroll additional description here
 
 ## null
 ```shell
@@ -1392,7 +1392,7 @@ $api->postApiV2PurchasesOtpsEnrollments($content_type, $signature, $signature_me
 # Payment v2 status new
 
 
-null
+Payment V2 Status New additional description here
 
 ## null
 ```shell
@@ -1453,6 +1453,13 @@ $api->getApiV2Purchases($content_type, $signature, $signature_method, $timestamp
 
 ### HTTP Request
 `GET /api/v2/purchases`
+### Query Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|transactionRef|true|string||
+|amount|true|string||
+
+
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
@@ -1464,13 +1471,6 @@ $api->getApiV2Purchases($content_type, $signature, $signature_method, $timestamp
 |Authorization|true|string||
 
 
-### Query Parameters
-|Parameter|Required|Type|Description|
-|----|----|----|----|
-|transactionRef|true|string||
-|amount|true|string||
-
-
 ### Responses for status codes
 |default|
 |----|
@@ -1480,7 +1480,7 @@ $api->getApiV2Purchases($content_type, $signature, $signature_method, $timestamp
 # Validaiton otp auto enroll
 
 
-null
+Validaiton OTP Auto Enroll additional description here
 
 ## null
 ```shell
@@ -1561,7 +1561,7 @@ $api->postApiV2PurchasesValidationsOtpsEnrollments($content_type, $signature, $s
 # Validation recurrent
 
 
-null
+Validation Recurrent additional description here
 
 ## null
 ```shell
@@ -1637,5 +1637,7 @@ $api->postApiV2PurchasesValidationsRecurrents($content_type, $signature, $signat
 |default|
 |----|
 ||
+
+
 
 
