@@ -24,7 +24,7 @@ Version: 2.0
 
 null
 
-## Get ewallet Payment Instrument with user access token
+## null
 ```shell
 curl "/api/v1/ewallet/instruments" -X GET -d @- << EOF 
 { }
@@ -42,7 +42,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.GetEwalletPaymentInstrumentWithUserAccessTokenApi();
-api.get_api_v1_ewallet_instruments(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.get_api_v1_ewallet_instruments(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -57,7 +57,7 @@ import interswitchng.com.GetEwalletPaymentInstrumentWithUserAccessTokenApi;
 ApiClient apiClient = new ApiClient();
 
 GetEwalletPaymentInstrumentWithUserAccessTokenApi api = new GetEwalletPaymentInstrumentWithUserAccessTokenApi(apiClient);
-api.getApiV1EwalletInstruments(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.getApiV1EwalletInstruments(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -74,7 +74,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\GetEwalletPaymentInstrumentWithUserAccessTokenApi($api_client);
-$api->getApiV1EwalletInstruments($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->getApiV1EwalletInstruments($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -105,7 +105,7 @@ $api->getApiV1EwalletInstruments($content_type, $body, $signature, $signature_me
 
 null
 
-## Paying with user access token and payment identifier
+## null
 ```shell
 curl "/api/v1/ewallet/purchases" -X POST -d @- << EOF 
 { }
@@ -123,7 +123,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.PayingWithUserAccessTokenAndPaymentIdentifierApi();
-api.post_api_v1_ewallet_purchases(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v1_ewallet_purchases(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -138,7 +138,7 @@ import interswitchng.com.PayingWithUserAccessTokenAndPaymentIdentifierApi;
 ApiClient apiClient = new ApiClient();
 
 PayingWithUserAccessTokenAndPaymentIdentifierApi api = new PayingWithUserAccessTokenAndPaymentIdentifierApi(apiClient);
-api.postApiV1EwalletPurchases(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV1EwalletPurchases(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -155,7 +155,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\PayingWithUserAccessTokenAndPaymentIdentifierApi($api_client);
-$api->postApiV1EwalletPurchases($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV1EwalletPurchases($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -186,7 +186,7 @@ $api->postApiV1EwalletPurchases($content_type, $body, $signature, $signature_met
 
 null
 
-## Ewallet Service Status
+## null
 ```shell
 curl "/api/v1/ewallet/status" -X GET -d @- << EOF 
 { }
@@ -204,7 +204,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.EwalletServiceStatusApi();
-api.get_api_v1_ewallet_status(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.get_api_v1_ewallet_status(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -219,7 +219,7 @@ import interswitchng.com.EwalletServiceStatusApi;
 ApiClient apiClient = new ApiClient();
 
 EwalletServiceStatusApi api = new EwalletServiceStatusApi(apiClient);
-api.getApiV1EwalletStatus(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.getApiV1EwalletStatus(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -236,7 +236,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\EwalletServiceStatusApi($api_client);
-$api->getApiV1EwalletStatus($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->getApiV1EwalletStatus($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -267,12 +267,81 @@ $api->getApiV1EwalletStatus($content_type, $body, $signature, $signature_method,
 
 null
 
+## null
+```shell
+curl "/passport/oauth/token" -X POST
+```
+
+```python
+
+
+
+from ..api_client import ApiClient;
+from ..configuration import Configuration
+
+apiClient = client.ApiClient("")
+
+
+api = client.GenerateProcessorAccessTokenApi();
+api.post_passport_oauth_token(authorization);
+
+
+
+```
+
+```java
+
+
+import interswitchng.com.ApiClient;
+import interswitchng.com.GenerateProcessorAccessTokenApi;
+
+ApiClient apiClient = new ApiClient();
+
+GenerateProcessorAccessTokenApi api = new GenerateProcessorAccessTokenApi(apiClient);
+api.postPassportOauthToken(authorization);
+
+
+```
+
+```php
+
+
+
+
+require_once('/path/to/interswitchng.com');
+
+$api_client = new Swagger\Client\ApiClient('');
+
+
+
+$api = new Swagger\Client\GenerateProcessorAccessTokenApi($api_client);
+$api->postPassportOauthToken($authorization);
+
+
+
+
+```
+
+### HTTP Request
+`POST /passport/oauth/token`
+### Header Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|Authorization|true|string||
+
+
+### Responses for status codes
+|default|
+|----|
+||
+
+
 # Purchase service status
 
 
 null
 
-## Purchase Service Status
+## null
 ```shell
 curl "/api/v1/purchases/status" -X GET -d @- << EOF 
 { }
@@ -290,7 +359,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.PurchaseServiceStatusApi();
-api.get_api_v1_purchases_status(content_type, body, signature, signature_method, timestamp, nonce, authorization, transaction_ref);
+api.get_api_v1_purchases_status(content_type, signature, signature_method, timestamp, nonce, authorization, body, transaction_ref);
 
 
 
@@ -305,7 +374,7 @@ import interswitchng.com.PurchaseServiceStatusApi;
 ApiClient apiClient = new ApiClient();
 
 PurchaseServiceStatusApi api = new PurchaseServiceStatusApi(apiClient);
-api.getApiV1PurchasesStatus(contentType, body, signature, signatureMethod, timestamp, nonce, authorization, transactionRef);
+api.getApiV1PurchasesStatus(contentType, signature, signatureMethod, timestamp, nonce, authorization, body, transactionRef);
 
 
 ```
@@ -322,7 +391,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\PurchaseServiceStatusApi($api_client);
-$api->getApiV1PurchasesStatus($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization, $transaction_ref);
+$api->getApiV1PurchasesStatus($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body, $transaction_ref);
 
 
 
@@ -354,12 +423,88 @@ $api->getApiV1PurchasesStatus($content_type, $body, $signature, $signature_metho
 
 null
 
+## null
+```shell
+curl "/api/v1/ewallet/auths" -X POST -d @- << EOF 
+{ }
+EOF
+```
+
+```python
+
+
+
+from ..api_client import ApiClient;
+from ..configuration import Configuration
+
+apiClient = client.ApiClient("")
+
+
+api = client.GetUserAccessTokenApi();
+api.post_api_v1_ewallet_auths(content_type, signature, signature_method, timestamp, nonce, authorization, body);
+
+
+
+```
+
+```java
+
+
+import interswitchng.com.ApiClient;
+import interswitchng.com.GetUserAccessTokenApi;
+
+ApiClient apiClient = new ApiClient();
+
+GetUserAccessTokenApi api = new GetUserAccessTokenApi(apiClient);
+api.postApiV1EwalletAuths(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
+
+
+```
+
+```php
+
+
+
+
+require_once('/path/to/interswitchng.com');
+
+$api_client = new Swagger\Client\ApiClient('');
+
+
+
+$api = new Swagger\Client\GetUserAccessTokenApi($api_client);
+$api->postApiV1EwalletAuths($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
+
+
+
+
+```
+
+### HTTP Request
+`POST /api/v1/ewallet/auths`
+### Header Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|Content-Type|true|string||
+|Signature|true|string||
+|SignatureMethod|true|string||
+|Timestamp|true|string||
+|Nonce|true|string||
+|Authorization|true|string||
+
+
+### Responses for status codes
+|default|
+|----|
+||
+
+
 # Processor payment 
 
 
 null
 
-## Processor Payment 
+## null
 ```shell
 curl "/api/v1/purchases" -X POST -d @- << EOF 
 { }
@@ -377,7 +522,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ProcessorPaymentApi();
-api.post_api_v1_purchases(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v1_purchases(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -392,7 +537,7 @@ import interswitchng.com.ProcessorPaymentApi;
 ApiClient apiClient = new ApiClient();
 
 ProcessorPaymentApi api = new ProcessorPaymentApi(apiClient);
-api.postApiV1Purchases(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV1Purchases(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -409,7 +554,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ProcessorPaymentApi($api_client);
-$api->postApiV1Purchases($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV1Purchases($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -440,12 +585,90 @@ $api->postApiV1Purchases($content_type, $body, $signature, $signature_method, $t
 
 null
 
+## null
+```shell
+curl "/api/v1/purchases" -X GET -d @- << EOF 
+{ }
+EOF
+```
+
+```python
+
+
+
+from ..api_client import ApiClient;
+from ..configuration import Configuration
+
+apiClient = client.ApiClient("")
+
+
+api = client.GetTransactionStatusApi();
+api.get_api_v1_purchases(content_type, signature, signature_method, timestamp, nonce, authorization, amount, transaction_ref, body);
+
+
+
+```
+
+```java
+
+
+import interswitchng.com.ApiClient;
+import interswitchng.com.GetTransactionStatusApi;
+
+ApiClient apiClient = new ApiClient();
+
+GetTransactionStatusApi api = new GetTransactionStatusApi(apiClient);
+api.getApiV1Purchases(contentType, signature, signatureMethod, timestamp, nonce, authorization, amount, transactionRef, body);
+
+
+```
+
+```php
+
+
+
+
+require_once('/path/to/interswitchng.com');
+
+$api_client = new Swagger\Client\ApiClient('');
+
+
+
+$api = new Swagger\Client\GetTransactionStatusApi($api_client);
+$api->getApiV1Purchases($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $amount, $transaction_ref, $body);
+
+
+
+
+```
+
+### HTTP Request
+`GET /api/v1/purchases`
+### Header Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|Content-Type|true|string||
+|Signature|true|string||
+|SignatureMethod|true|string||
+|Timestamp|true|string||
+|Nonce|true|string||
+|Authorization|true|string||
+|amount|true|string||
+|transactionRef|true|string||
+
+
+### Responses for status codes
+|default|
+|----|
+||
+
+
 # Processor otp complete transaction
 
 
 null
 
-## Processor OTP complete transaction
+## null
 ```shell
 curl "/api/v1/purchases/otps/auths" -X POST -d @- << EOF 
 { }
@@ -463,7 +686,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ProcessorOTPCompleteTransactionApi();
-api.post_api_v1_purchases_otps_auths(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v1_purchases_otps_auths(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -478,7 +701,7 @@ import interswitchng.com.ProcessorOTPCompleteTransactionApi;
 ApiClient apiClient = new ApiClient();
 
 ProcessorOTPCompleteTransactionApi api = new ProcessorOTPCompleteTransactionApi(apiClient);
-api.postApiV1PurchasesOtpsAuths(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV1PurchasesOtpsAuths(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -495,7 +718,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ProcessorOTPCompleteTransactionApi($api_client);
-$api->postApiV1PurchasesOtpsAuths($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV1PurchasesOtpsAuths($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -526,7 +749,7 @@ $api->postApiV1PurchasesOtpsAuths($content_type, $body, $signature, $signature_m
 
 null
 
-## Processor validate card
+## null
 ```shell
 curl "/api/v1/purchases/validations" -X POST -d @- << EOF 
 { }
@@ -544,7 +767,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ProcessorValidateCardApi();
-api.post_api_v1_purchases_validations(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v1_purchases_validations(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -559,7 +782,7 @@ import interswitchng.com.ProcessorValidateCardApi;
 ApiClient apiClient = new ApiClient();
 
 ProcessorValidateCardApi api = new ProcessorValidateCardApi(apiClient);
-api.postApiV1PurchasesValidations(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV1PurchasesValidations(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -576,7 +799,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ProcessorValidateCardApi($api_client);
-$api->postApiV1PurchasesValidations($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV1PurchasesValidations($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -602,17 +825,12 @@ $api->postApiV1PurchasesValidations($content_type, $body, $signature, $signature
 ||
 
 
-# Get user access token by merchant (ewallet)
-
-
-null
-
 # Gateway payment without otp
 
 
 null
 
-## Gateway Payment without OTP
+## null
 ```shell
 curl "/api/v1/payment/gateway/purchase" -X POST -d @- << EOF 
 { }
@@ -630,7 +848,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.GatewayPaymentWithoutOTPApi();
-api.post_api_v1_payment_gateway_purchase(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v1_payment_gateway_purchase(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -645,7 +863,7 @@ import interswitchng.com.GatewayPaymentWithoutOTPApi;
 ApiClient apiClient = new ApiClient();
 
 GatewayPaymentWithoutOTPApi api = new GatewayPaymentWithoutOTPApi(apiClient);
-api.postApiV1PaymentGatewayPurchase(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV1PaymentGatewayPurchase(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -662,7 +880,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\GatewayPaymentWithoutOTPApi($api_client);
-$api->postApiV1PaymentGatewayPurchase($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV1PaymentGatewayPurchase($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -693,7 +911,7 @@ $api->postApiV1PaymentGatewayPurchase($content_type, $body, $signature, $signatu
 
 null
 
-## Webpay
+## null
 ```shell
 curl "/webpay/api/v2/pay.json" -X POST -d @- << EOF 
 { }
@@ -711,7 +929,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.WebpayApi();
-api.post_webpay_api_v2_pay_json(content_type, body, authorization, terminal_id);
+api.post_webpay_api_v2_pay_json(content_type, authorization, terminal_id, body);
 
 
 
@@ -726,7 +944,7 @@ import interswitchng.com.WebpayApi;
 ApiClient apiClient = new ApiClient();
 
 WebpayApi api = new WebpayApi(apiClient);
-api.postWebpayApiV2PayJson(contentType, body, authorization, terminalId);
+api.postWebpayApiV2PayJson(contentType, authorization, terminalId, body);
 
 
 ```
@@ -743,7 +961,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\WebpayApi($api_client);
-$api->postWebpayApiV2PayJson($content_type, $body, $authorization, $terminal_id);
+$api->postWebpayApiV2PayJson($content_type, $authorization, $terminal_id, $body);
 
 
 
@@ -771,7 +989,7 @@ $api->postWebpayApiV2PayJson($content_type, $body, $authorization, $terminal_id)
 
 null
 
-## Payment V2
+## null
 ```shell
 curl "/api/v2/purchases" -X POST -d @- << EOF 
 { }
@@ -852,12 +1070,88 @@ $api->postApiV2Purchases($signature, $signature_method, $timestamp, $nonce, $aut
 
 null
 
+## null
+```shell
+curl "/api/v2/purchases/otps/auths" -X POST -d @- << EOF 
+{ }
+EOF
+```
+
+```python
+
+
+
+from ..api_client import ApiClient;
+from ..configuration import Configuration
+
+apiClient = client.ApiClient("")
+
+
+api = client.PaymentOTPVApi();
+api.post_api_v2_purchases_otps_auths(content_type, signature, signature_method, timestamp, nonce, authorization, body);
+
+
+
+```
+
+```java
+
+
+import interswitchng.com.ApiClient;
+import interswitchng.com.PaymentOTPVApi;
+
+ApiClient apiClient = new ApiClient();
+
+PaymentOTPVApi api = new PaymentOTPVApi(apiClient);
+api.postApiV2PurchasesOtpsAuths(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
+
+
+```
+
+```php
+
+
+
+
+require_once('/path/to/interswitchng.com');
+
+$api_client = new Swagger\Client\ApiClient('');
+
+
+
+$api = new Swagger\Client\PaymentOTPVApi($api_client);
+$api->postApiV2PurchasesOtpsAuths($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
+
+
+
+
+```
+
+### HTTP Request
+`POST /api/v2/purchases/otps/auths`
+### Header Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|Content-Type|true|string||
+|Signature|true|string||
+|SignatureMethod|true|string||
+|Timestamp|true|string||
+|Nonce|true|string||
+|Authorization|true|string||
+
+
+### Responses for status codes
+|default|
+|----|
+||
+
+
 # Validation v2
 
 
 null
 
-## Validation V2
+## null
 ```shell
 curl "/api/v2/purchases/validations" -X POST -d @- << EOF 
 { }
@@ -875,7 +1169,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ValidationVApi();
-api.post_api_v2_purchases_validations(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v2_purchases_validations(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -890,7 +1184,7 @@ import interswitchng.com.ValidationVApi;
 ApiClient apiClient = new ApiClient();
 
 ValidationVApi api = new ValidationVApi(apiClient);
-api.postApiV2PurchasesValidations(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV2PurchasesValidations(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -907,7 +1201,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ValidationVApi($api_client);
-$api->postApiV2PurchasesValidations($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV2PurchasesValidations($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -938,183 +1232,7 @@ $api->postApiV2PurchasesValidations($content_type, $body, $signature, $signature
 
 null
 
-# Payment v2 status
-
-
-null
-
-## Payment V2 Status
-```shell
-curl "/api/v1/purchases" -X GET -d @- << EOF 
-{ }
-EOF
-```
-
-```python
-
-
-
-from ..api_client import ApiClient;
-from ..configuration import Configuration
-
-apiClient = client.ApiClient("")
-
-
-api = client.PaymentVStatusApi();
-api.get_api_v1_purchases(content_type, body, signature, signature_method, timestamp, nonce, authorization, transaction_ref, amount, transaction_ref2, amount2);
-
-
-
-```
-
-```java
-
-
-import interswitchng.com.ApiClient;
-import interswitchng.com.PaymentVStatusApi;
-
-ApiClient apiClient = new ApiClient();
-
-PaymentVStatusApi api = new PaymentVStatusApi(apiClient);
-api.getApiV1Purchases(contentType, body, signature, signatureMethod, timestamp, nonce, authorization, transactionRef, amount, transactionRef2, amount2);
-
-
-```
-
-```php
-
-
-
-
-require_once('/path/to/interswitchng.com');
-
-$api_client = new Swagger\Client\ApiClient('');
-
-
-
-$api = new Swagger\Client\PaymentVStatusApi($api_client);
-$api->getApiV1Purchases($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization, $transaction_ref, $amount, $transaction_ref2, $amount2);
-
-
-
-
-```
-
-### HTTP Request
-`GET /api/v1/purchases`
-### Header Parameters
-|Parameter|Required|Type|Description|
-|----|----|----|----|
-|Content-Type|true|string||
-|Signature|true|string||
-|SignatureMethod|true|string||
-|Timestamp|true|string||
-|Nonce|true|string||
-|Authorization|true|string||
-|transactionRef|true|string||
-|amount|true|string||
-
-
-### Query Parameters
-|Parameter|Required|Type|Description|
-|----|----|----|----|
-|transactionRef|false|string||
-|amount|false|string||
-
-
-### Responses for status codes
-|default|
-|----|
-||
-
-
-# Payment otp v2 cardinal
-
-
-null
-
-## Payment OTP V2 Cardinal
-```shell
-curl "/api/v2/purchases/otps/auths" -X POST -d @- << EOF 
-{ }
-EOF
-```
-
-```python
-
-
-
-from ..api_client import ApiClient;
-from ..configuration import Configuration
-
-apiClient = client.ApiClient("")
-
-
-api = client.PaymentOTPVCardinalApi();
-api.post_api_v2_purchases_otps_auths(content_type, body, signature, signature_method, timestamp, nonce, authorization);
-
-
-
-```
-
-```java
-
-
-import interswitchng.com.ApiClient;
-import interswitchng.com.PaymentOTPVCardinalApi;
-
-ApiClient apiClient = new ApiClient();
-
-PaymentOTPVCardinalApi api = new PaymentOTPVCardinalApi(apiClient);
-api.postApiV2PurchasesOtpsAuths(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
-
-
-```
-
-```php
-
-
-
-
-require_once('/path/to/interswitchng.com');
-
-$api_client = new Swagger\Client\ApiClient('');
-
-
-
-$api = new Swagger\Client\PaymentOTPVCardinalApi($api_client);
-$api->postApiV2PurchasesOtpsAuths($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
-
-
-
-
-```
-
-### HTTP Request
-`POST /api/v2/purchases/otps/auths`
-### Header Parameters
-|Parameter|Required|Type|Description|
-|----|----|----|----|
-|Content-Type|true|string||
-|Signature|true|string||
-|SignatureMethod|true|string||
-|Timestamp|true|string||
-|Nonce|true|string||
-|Authorization|true|string||
-
-
-### Responses for status codes
-|default|
-|----|
-||
-
-
-# Validation otp v2 cardinal
-
-
-null
-
-## Validation OTP V2 Cardinal
+## null
 ```shell
 curl "/api/v2/purchases/validations/otps/auths" -X POST -d @- << EOF 
 { }
@@ -1131,8 +1249,8 @@ from ..configuration import Configuration
 apiClient = client.ApiClient("")
 
 
-api = client.ValidationOTPVCardinalApi();
-api.post_api_v2_purchases_validations_otps_auths(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api = client.ValidationOTPVApi();
+api.post_api_v2_purchases_validations_otps_auths(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -1142,12 +1260,12 @@ api.post_api_v2_purchases_validations_otps_auths(content_type, body, signature, 
 
 
 import interswitchng.com.ApiClient;
-import interswitchng.com.ValidationOTPVCardinalApi;
+import interswitchng.com.ValidationOTPVApi;
 
 ApiClient apiClient = new ApiClient();
 
-ValidationOTPVCardinalApi api = new ValidationOTPVCardinalApi(apiClient);
-api.postApiV2PurchasesValidationsOtpsAuths(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+ValidationOTPVApi api = new ValidationOTPVApi(apiClient);
+api.postApiV2PurchasesValidationsOtpsAuths(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -1163,8 +1281,8 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 
-$api = new Swagger\Client\ValidationOTPVCardinalApi($api_client);
-$api->postApiV2PurchasesValidationsOtpsAuths($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api = new Swagger\Client\ValidationOTPVApi($api_client);
+$api->postApiV2PurchasesValidationsOtpsAuths($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -1190,86 +1308,12 @@ $api->postApiV2PurchasesValidationsOtpsAuths($content_type, $body, $signature, $
 ||
 
 
-# Generate user access token 
-
-
-null
-
-## Generate User Access Token 
-```shell
-curl "/passport/oauth/token" -X POST
-```
-
-```python
-
-
-
-from ..api_client import ApiClient;
-from ..configuration import Configuration
-
-apiClient = client.ApiClient("")
-
-
-api = client.GenerateUserAccessTokenApi();
-api.post_passport_oauth_token(authorization);
-
-
-
-```
-
-```java
-
-
-import interswitchng.com.ApiClient;
-import interswitchng.com.GenerateUserAccessTokenApi;
-
-ApiClient apiClient = new ApiClient();
-
-GenerateUserAccessTokenApi api = new GenerateUserAccessTokenApi(apiClient);
-api.postPassportOauthToken(authorization);
-
-
-```
-
-```php
-
-
-
-
-require_once('/path/to/interswitchng.com');
-
-$api_client = new Swagger\Client\ApiClient('');
-
-
-
-$api = new Swagger\Client\GenerateUserAccessTokenApi($api_client);
-$api->postPassportOauthToken($authorization);
-
-
-
-
-```
-
-### HTTP Request
-`POST /passport/oauth/token`
-### Header Parameters
-|Parameter|Required|Type|Description|
-|----|----|----|----|
-|Authorization|true|string||
-
-
-### Responses for status codes
-|default|
-|----|
-||
-
-
 # Payment otp auto enroll
 
 
 null
 
-## Payment OTP Auto Enroll
+## null
 ```shell
 curl "/api/v2/purchases/otps/enrollments" -X POST -d @- << EOF 
 { }
@@ -1287,7 +1331,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.PaymentOTPAutoEnrollApi();
-api.post_api_v2_purchases_otps_enrollments(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v2_purchases_otps_enrollments(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -1302,7 +1346,7 @@ import interswitchng.com.PaymentOTPAutoEnrollApi;
 ApiClient apiClient = new ApiClient();
 
 PaymentOTPAutoEnrollApi api = new PaymentOTPAutoEnrollApi(apiClient);
-api.postApiV2PurchasesOtpsEnrollments(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV2PurchasesOtpsEnrollments(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -1319,7 +1363,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\PaymentOTPAutoEnrollApi($api_client);
-$api->postApiV2PurchasesOtpsEnrollments($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV2PurchasesOtpsEnrollments($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -1350,7 +1394,7 @@ $api->postApiV2PurchasesOtpsEnrollments($content_type, $body, $signature, $signa
 
 null
 
-## Payment V2 Status New
+## null
 ```shell
 curl "/api/v2/purchases" -X GET -d @- << EOF 
 { }
@@ -1368,7 +1412,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.PaymentVStatusNewApi();
-api.get_api_v2_purchases(content_type, body, signature, signature_method, timestamp, nonce, authorization, transaction_ref, amount);
+api.get_api_v2_purchases(content_type, signature, signature_method, timestamp, nonce, authorization, transaction_ref, amount, body);
 
 
 
@@ -1383,7 +1427,7 @@ import interswitchng.com.PaymentVStatusNewApi;
 ApiClient apiClient = new ApiClient();
 
 PaymentVStatusNewApi api = new PaymentVStatusNewApi(apiClient);
-api.getApiV2Purchases(contentType, body, signature, signatureMethod, timestamp, nonce, authorization, transactionRef, amount);
+api.getApiV2Purchases(contentType, signature, signatureMethod, timestamp, nonce, authorization, transactionRef, amount, body);
 
 
 ```
@@ -1400,7 +1444,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\PaymentVStatusNewApi($api_client);
-$api->getApiV2Purchases($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization, $transaction_ref, $amount);
+$api->getApiV2Purchases($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $transaction_ref, $amount, $body);
 
 
 
@@ -1438,7 +1482,7 @@ $api->getApiV2Purchases($content_type, $body, $signature, $signature_method, $ti
 
 null
 
-## Validaiton OTP Auto Enroll
+## null
 ```shell
 curl "/api/v2/purchases/validations/otps/enrollments" -X POST -d @- << EOF 
 { }
@@ -1456,7 +1500,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ValidaitonOTPAutoEnrollApi();
-api.post_api_v2_purchases_validations_otps_enrollments(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v2_purchases_validations_otps_enrollments(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -1471,7 +1515,7 @@ import interswitchng.com.ValidaitonOTPAutoEnrollApi;
 ApiClient apiClient = new ApiClient();
 
 ValidaitonOTPAutoEnrollApi api = new ValidaitonOTPAutoEnrollApi(apiClient);
-api.postApiV2PurchasesValidationsOtpsEnrollments(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV2PurchasesValidationsOtpsEnrollments(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -1488,7 +1532,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ValidaitonOTPAutoEnrollApi($api_client);
-$api->postApiV2PurchasesValidationsOtpsEnrollments($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV2PurchasesValidationsOtpsEnrollments($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -1519,7 +1563,7 @@ $api->postApiV2PurchasesValidationsOtpsEnrollments($content_type, $body, $signat
 
 null
 
-## Validation Recurrent
+## null
 ```shell
 curl "/api/v2/purchases/validations/recurrents" -X POST -d @- << EOF 
 { }
@@ -1537,7 +1581,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ValidationRecurrentApi();
-api.post_api_v2_purchases_validations_recurrents(content_type, body, signature, signature_method, timestamp, nonce, authorization);
+api.post_api_v2_purchases_validations_recurrents(content_type, signature, signature_method, timestamp, nonce, authorization, body);
 
 
 
@@ -1552,7 +1596,7 @@ import interswitchng.com.ValidationRecurrentApi;
 ApiClient apiClient = new ApiClient();
 
 ValidationRecurrentApi api = new ValidationRecurrentApi(apiClient);
-api.postApiV2PurchasesValidationsRecurrents(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
+api.postApiV2PurchasesValidationsRecurrents(contentType, signature, signatureMethod, timestamp, nonce, authorization, body);
 
 
 ```
@@ -1569,7 +1613,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ValidationRecurrentApi($api_client);
-$api->postApiV2PurchasesValidationsRecurrents($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
+$api->postApiV2PurchasesValidationsRecurrents($content_type, $signature, $signature_method, $timestamp, $nonce, $authorization, $body);
 
 
 
@@ -1593,90 +1637,5 @@ $api->postApiV2PurchasesValidationsRecurrents($content_type, $body, $signature, 
 |default|
 |----|
 ||
-
-
-# Http://localhost:19080/api/v1/ewallet/auths
-
-
-null
-
-## http://localhost:19080/api/v1/ewallet/auths
-```shell
-curl "/api/v1/ewallet/auths" -X POST -d @- << EOF 
-{ }
-EOF
-```
-
-```python
-
-
-
-from ..api_client import ApiClient;
-from ..configuration import Configuration
-
-apiClient = client.ApiClient("")
-
-
-api = client.HttplocalhostapivewalletauthsApi();
-api.post_api_v1_ewallet_auths(content_type, body, signature, signature_method, timestamp, nonce, authorization);
-
-
-
-```
-
-```java
-
-
-import interswitchng.com.ApiClient;
-import interswitchng.com.HttplocalhostapivewalletauthsApi;
-
-ApiClient apiClient = new ApiClient();
-
-HttplocalhostapivewalletauthsApi api = new HttplocalhostapivewalletauthsApi(apiClient);
-api.postApiV1EwalletAuths(contentType, body, signature, signatureMethod, timestamp, nonce, authorization);
-
-
-```
-
-```php
-
-
-
-
-require_once('/path/to/interswitchng.com');
-
-$api_client = new Swagger\Client\ApiClient('');
-
-
-
-$api = new Swagger\Client\HttplocalhostapivewalletauthsApi($api_client);
-$api->postApiV1EwalletAuths($content_type, $body, $signature, $signature_method, $timestamp, $nonce, $authorization);
-
-
-
-
-```
-
-### HTTP Request
-`POST /api/v1/ewallet/auths`
-### Header Parameters
-|Parameter|Required|Type|Description|
-|----|----|----|----|
-|Content-Type|true|string||
-|Signature|true|string||
-|SignatureMethod|true|string||
-|Timestamp|true|string||
-|Nonce|true|string||
-|Authorization|true|string||
-
-
-### Responses for status codes
-|default|
-|----|
-||
-
-
-
-Get Wallet Payment Methods
 
 
