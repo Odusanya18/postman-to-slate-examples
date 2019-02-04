@@ -26,9 +26,7 @@ Passport Request additional description here
 
 ## null
 ```shell
-curl "/passport/oauth/token" -X POST -d @- << EOF 
-{ }
-EOF
+curl "/passport/oauth/token" -X POST
 ```
 
 ```python
@@ -42,7 +40,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.PassportRequestApi();
-api.post_passport_oauth_token(content_type, grant_type, authorization, body);
+api.post_passport_oauth_token(grant_type, authorization);
 
 
 
@@ -57,7 +55,7 @@ import interswitchng.com.PassportRequestApi;
 ApiClient apiClient = new ApiClient();
 
 PassportRequestApi api = new PassportRequestApi(apiClient);
-api.postPassportOauthToken(contentType, grantType, authorization, body);
+api.postPassportOauthToken(grantType, authorization);
 
 
 ```
@@ -74,7 +72,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\PassportRequestApi($api_client);
-$api->postPassportOauthToken($content_type, $grant_type, $authorization, $body);
+$api->postPassportOauthToken($grant_type, $authorization);
 
 
 
@@ -86,7 +84,6 @@ $api->postPassportOauthToken($content_type, $grant_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -149,7 +146,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.PurchaseWithCardApi();
-api.post_api_v3_purchases(content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.post_api_v3_purchases(body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -164,7 +161,7 @@ import interswitchng.com.PurchaseWithCardApi;
 ApiClient apiClient = new ApiClient();
 
 PurchaseWithCardApi api = new PurchaseWithCardApi(apiClient);
-api.postApiV3Purchases(contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.postApiV3Purchases(body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -181,7 +178,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\PurchaseWithCardApi($api_client);
-$api->postApiV3Purchases($content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->postApiV3Purchases($body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -193,13 +190,22 @@ $api->postApiV3Purchases($content_type, $authorization, $timestamp, $nonce, $sig
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
 |Signature|true|string||
 |SignatureMethod|true|string||
 |AuthKeyVersion|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|amount|false|string||
+|authData|false|string||
+|customerId|false|string||
+|transactionRef|false|string||
+|currency|false|string||
 
 
 ### Responses for status codes
@@ -246,7 +252,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.OTPValidationRequestApi();
-api.post_api_v3_purchases_otps_auths(content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.post_api_v3_purchases_otps_auths(body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -261,7 +267,7 @@ import interswitchng.com.OTPValidationRequestApi;
 ApiClient apiClient = new ApiClient();
 
 OTPValidationRequestApi api = new OTPValidationRequestApi(apiClient);
-api.postApiV3PurchasesOtpsAuths(contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.postApiV3PurchasesOtpsAuths(body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -278,7 +284,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\OTPValidationRequestApi($api_client);
-$api->postApiV3PurchasesOtpsAuths($content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->postApiV3PurchasesOtpsAuths($body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -290,13 +296,20 @@ $api->postApiV3PurchasesOtpsAuths($content_type, $authorization, $timestamp, $no
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
 |Signature|true|string||
 |SignatureMethod|true|string||
 |AuthKeyVersion|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|authData|false|string||
+|paymentId|false|string||
+|otp|false|string||
 
 
 ### Responses for status codes
@@ -312,9 +325,7 @@ VISA Auth Page (Load Page for iPIN) additional description here
 
 ## null
 ```shell
-curl "/V3DSStart" -X POST -d @- << EOF 
-{ }
-EOF
+curl "/V3DSStart" -X POST
 ```
 
 ```python
@@ -328,7 +339,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.VISAAuthPageLoadPageForIPINApi();
-api.post_v3_ds_start(content_type, term_url, pa_req, md, osb, vaa, body);
+api.post_v3_ds_start(term_url, pa_req, md, osb, vaa);
 
 
 
@@ -343,7 +354,7 @@ import interswitchng.com.VISAAuthPageLoadPageForIPINApi;
 ApiClient apiClient = new ApiClient();
 
 VISAAuthPageLoadPageForIPINApi api = new VISAAuthPageLoadPageForIPINApi(apiClient);
-api.postV3DSStart(contentType, termUrl, paReq, MD, osb, VAA, body);
+api.postV3DSStart(termUrl, paReq, MD, osb, VAA);
 
 
 ```
@@ -360,7 +371,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\VISAAuthPageLoadPageForIPINApi($api_client);
-$api->postV3DSStart($content_type, $term_url, $pa_req, $md, $osb, $vaa, $body);
+$api->postV3DSStart($term_url, $pa_req, $md, $osb, $vaa);
 
 
 
@@ -369,12 +380,6 @@ $api->postV3DSStart($content_type, $term_url, $pa_req, $md, $osb, $vaa, $body);
 
 ### HTTP Request
 `POST /V3DSStart`
-### Header Parameters
-|Parameter|Required|Type|Description|
-|----|----|----|----|
-|Content-Type|true|string||
-
-
 ### Query Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
@@ -398,9 +403,7 @@ VISA -> ISW CallBack additional description here
 
 ## null
 ```shell
-curl "/collections/api/v1/pay/cardinalCallBack" -X POST -d @- << EOF 
-{ }
-EOF
+curl "/collections/api/v1/pay/cardinalCallBack" -X POST
 ```
 
 ```python
@@ -414,7 +417,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.VISAISWCallBackApi();
-api.post_collections_api_v1_pay_cardinal_call_back(accept, accept_encoding, accept_language, content_length, content_type, md, pa_res, user_agent, body);
+api.post_collections_api_v1_pay_cardinal_call_back(accept, accept_encoding, accept_language, content_length, md, pa_res, user_agent);
 
 
 
@@ -429,7 +432,7 @@ import interswitchng.com.VISAISWCallBackApi;
 ApiClient apiClient = new ApiClient();
 
 VISAISWCallBackApi api = new VISAISWCallBackApi(apiClient);
-api.postCollectionsApiV1PayCardinalCallBack(accept, acceptEncoding, acceptLanguage, contentLength, contentType, MD, paRes, userAgent, body);
+api.postCollectionsApiV1PayCardinalCallBack(accept, acceptEncoding, acceptLanguage, contentLength, MD, paRes, userAgent);
 
 
 ```
@@ -446,7 +449,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\VISAISWCallBackApi($api_client);
-$api->postCollectionsApiV1PayCardinalCallBack($accept, $accept_encoding, $accept_language, $content_length, $content_type, $md, $pa_res, $user_agent, $body);
+$api->postCollectionsApiV1PayCardinalCallBack($accept, $accept_encoding, $accept_language, $content_length, $md, $pa_res, $user_agent);
 
 
 
@@ -462,7 +465,6 @@ $api->postCollectionsApiV1PayCardinalCallBack($accept, $accept_encoding, $accept
 |Accept-Encoding|true|string||
 |Accept-Language|true|string||
 |Content-Length|true|string||
-|Content-Type|true|string||
 |User-Agent|true|string||
 
 
@@ -502,7 +504,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.EnrollCardForOTPApi();
-api.post_api_v3_purchases_otps_enrollments(content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.post_api_v3_purchases_otps_enrollments(body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -517,7 +519,7 @@ import interswitchng.com.EnrollCardForOTPApi;
 ApiClient apiClient = new ApiClient();
 
 EnrollCardForOTPApi api = new EnrollCardForOTPApi(apiClient);
-api.postApiV3PurchasesOtpsEnrollments(contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.postApiV3PurchasesOtpsEnrollments(body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -534,7 +536,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\EnrollCardForOTPApi($api_client);
-$api->postApiV3PurchasesOtpsEnrollments($content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->postApiV3PurchasesOtpsEnrollments($body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -546,13 +548,20 @@ $api->postApiV3PurchasesOtpsEnrollments($content_type, $authorization, $timestam
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
 |Signature|true|string||
 |SignatureMethod|true|string||
 |AuthKeyVersion|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|mobilePhoneNumber|false|string||
+|paymentId|false|string||
+|transactionRef|false|string||
 
 
 ### Responses for status codes
@@ -584,7 +593,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ValidationRequestOTPApi();
-api.post_api_v3_purchases_validations_otps_auths(content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.post_api_v3_purchases_validations_otps_auths(body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -599,7 +608,7 @@ import interswitchng.com.ValidationRequestOTPApi;
 ApiClient apiClient = new ApiClient();
 
 ValidationRequestOTPApi api = new ValidationRequestOTPApi(apiClient);
-api.postApiV3PurchasesValidationsOtpsAuths(contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.postApiV3PurchasesValidationsOtpsAuths(body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -616,7 +625,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ValidationRequestOTPApi($api_client);
-$api->postApiV3PurchasesValidationsOtpsAuths($content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->postApiV3PurchasesValidationsOtpsAuths($body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -628,13 +637,19 @@ $api->postApiV3PurchasesValidationsOtpsAuths($content_type, $authorization, $tim
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
 |Signature|true|string||
 |SignatureMethod|true|string||
 |AuthKeyVersion|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|transactionRef|false|string||
+|otp|false|string||
 
 
 ### Responses for status codes
@@ -666,7 +681,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ValidationRequestApi();
-api.post_api_v3_purchases_validations(content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.post_api_v3_purchases_validations(body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -681,7 +696,7 @@ import interswitchng.com.ValidationRequestApi;
 ApiClient apiClient = new ApiClient();
 
 ValidationRequestApi api = new ValidationRequestApi(apiClient);
-api.postApiV3PurchasesValidations(contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.postApiV3PurchasesValidations(body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -698,7 +713,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ValidationRequestApi($api_client);
-$api->postApiV3PurchasesValidations($content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->postApiV3PurchasesValidations($body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -710,13 +725,19 @@ $api->postApiV3PurchasesValidations($content_type, $authorization, $timestamp, $
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
 |Signature|true|string||
 |SignatureMethod|true|string||
 |AuthKeyVersion|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|authData|false|string||
+|transactionRef|false|string||
 
 
 ### Responses for status codes
@@ -748,7 +769,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.RecurrentPurchaseApi();
-api.post_api_v2_purchases_recurrents(content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.post_api_v2_purchases_recurrents(body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -763,7 +784,7 @@ import interswitchng.com.RecurrentPurchaseApi;
 ApiClient apiClient = new ApiClient();
 
 RecurrentPurchaseApi api = new RecurrentPurchaseApi(apiClient);
-api.postApiV2PurchasesRecurrents(contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.postApiV2PurchasesRecurrents(body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -780,7 +801,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\RecurrentPurchaseApi($api_client);
-$api->postApiV2PurchasesRecurrents($content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->postApiV2PurchasesRecurrents($body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -792,13 +813,23 @@ $api->postApiV2PurchasesRecurrents($content_type, $authorization, $timestamp, $n
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
 |Signature|true|string||
 |SignatureMethod|true|string||
 |AuthKeyVersion|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|amount|false|string||
+|tokenExpiryDate|false|string||
+|customerId|false|string||
+|transactionRef|false|string||
+|currency|false|string||
+|token|false|string||
 
 
 ### Responses for status codes
@@ -830,7 +861,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.RecurrentGetTokenApi();
-api.post_api_v2_purchases_validations_recurrents(content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.post_api_v2_purchases_validations_recurrents(body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -845,7 +876,7 @@ import interswitchng.com.RecurrentGetTokenApi;
 ApiClient apiClient = new ApiClient();
 
 RecurrentGetTokenApi api = new RecurrentGetTokenApi(apiClient);
-api.postApiV2PurchasesValidationsRecurrents(contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.postApiV2PurchasesValidationsRecurrents(body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -862,7 +893,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\RecurrentGetTokenApi($api_client);
-$api->postApiV2PurchasesValidationsRecurrents($content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->postApiV2PurchasesValidationsRecurrents($body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -874,13 +905,19 @@ $api->postApiV2PurchasesValidationsRecurrents($content_type, $authorization, $ti
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
 |Signature|true|string||
 |SignatureMethod|true|string||
 |AuthKeyVersion|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|authData|false|string||
+|transactionRef|false|string||
 
 
 ### Responses for status codes
@@ -912,7 +949,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.GetTransactionStatusSystemMalfunctionApi();
-api.get_api_v3_purchases(amount, transaction_ref, , content_type, authorization, timestamp, nonce, signature, signature_method, auth_key_version, body);
+api.get_api_v3_purchases(amount, transaction_ref, , body, authorization, timestamp, nonce, signature, signature_method, auth_key_version);
 
 
 
@@ -927,7 +964,7 @@ import interswitchng.com.GetTransactionStatusSystemMalfunctionApi;
 ApiClient apiClient = new ApiClient();
 
 GetTransactionStatusSystemMalfunctionApi api = new GetTransactionStatusSystemMalfunctionApi(apiClient);
-api.getApiV3Purchases(amount, transactionRef, _______________________________________________________________________________________________, contentType, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion, body);
+api.getApiV3Purchases(amount, transactionRef, _______________________________________________________________________________________________, body, authorization, timestamp, nonce, signature, signatureMethod, authKeyVersion);
 
 
 ```
@@ -944,7 +981,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\GetTransactionStatusSystemMalfunctionApi($api_client);
-$api->getApiV3Purchases($amount, $transaction_ref, $_______________________________________________________________________________________________, $content_type, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version, $body);
+$api->getApiV3Purchases($amount, $transaction_ref, $_______________________________________________________________________________________________, $body, $authorization, $timestamp, $nonce, $signature, $signature_method, $auth_key_version);
 
 
 
@@ -959,7 +996,6 @@ $api->getApiV3Purchases($amount, $transaction_ref, $____________________________
 |Amount|true|string||
 |transactionRef|true|string||
 |-----------------------------------------------------------------------------------------------|true|string||
-|Content-Type|true|string||
 |Authorization|true|string||
 |Timestamp|true|string||
 |Nonce|true|string||
