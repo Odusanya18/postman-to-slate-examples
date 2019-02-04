@@ -42,7 +42,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.StatusApi();
-api.get_health(content_type, authorization, body);
+api.get_health(body, authorization);
 
 
 
@@ -57,7 +57,7 @@ import interswitchng.com.StatusApi;
 ApiClient apiClient = new ApiClient();
 
 StatusApi api = new StatusApi(apiClient);
-api.getHealth(contentType, authorization, body);
+api.getHealth(body, authorization);
 
 
 ```
@@ -74,7 +74,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\StatusApi($api_client);
-$api->getHealth($content_type, $authorization, $body);
+$api->getHealth($body, $authorization);
 
 
 
@@ -86,7 +86,6 @@ $api->getHealth($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -119,7 +118,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.TokeniseApi();
-api.post_api_v1_tokenise(content_type, authorization, body);
+api.post_api_v1_tokenise(body, authorization);
 
 
 
@@ -134,7 +133,7 @@ import interswitchng.com.TokeniseApi;
 ApiClient apiClient = new ApiClient();
 
 TokeniseApi api = new TokeniseApi(apiClient);
-api.postApiV1Tokenise(contentType, authorization, body);
+api.postApiV1Tokenise(body, authorization);
 
 
 ```
@@ -151,7 +150,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\TokeniseApi($api_client);
-$api->postApiV1Tokenise($content_type, $authorization, $body);
+$api->postApiV1Tokenise($body, $authorization);
 
 
 
@@ -163,8 +162,15 @@ $api->postApiV1Tokenise($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|requestorId|false|string||
+|expiry|false|string||
+|pan|false|string||
 
 
 ### Responses for status codes
@@ -196,7 +202,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.DetokeniseApi();
-api.post_api_v1_de_tokenise(content_type, authorization, body);
+api.post_api_v1_de_tokenise(body, authorization);
 
 
 
@@ -211,7 +217,7 @@ import interswitchng.com.DetokeniseApi;
 ApiClient apiClient = new ApiClient();
 
 DetokeniseApi api = new DetokeniseApi(apiClient);
-api.postApiV1DeTokenise(contentType, authorization, body);
+api.postApiV1DeTokenise(body, authorization);
 
 
 ```
@@ -228,7 +234,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\DetokeniseApi($api_client);
-$api->postApiV1DeTokenise($content_type, $authorization, $body);
+$api->postApiV1DeTokenise($body, $authorization);
 
 
 
@@ -240,8 +246,15 @@ $api->postApiV1DeTokenise($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|requestorId|false|string||
+|expiry|false|string||
+|token|false|string||
 
 
 ### Responses for status codes
@@ -273,7 +286,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.ProvidersApi();
-api.get_api_v1_providers(content_type, authorization, body);
+api.get_api_v1_providers(body, authorization);
 
 
 
@@ -288,7 +301,7 @@ import interswitchng.com.ProvidersApi;
 ApiClient apiClient = new ApiClient();
 
 ProvidersApi api = new ProvidersApi(apiClient);
-api.getApiV1Providers(contentType, authorization, body);
+api.getApiV1Providers(body, authorization);
 
 
 ```
@@ -305,7 +318,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\ProvidersApi($api_client);
-$api->getApiV1Providers($content_type, $authorization, $body);
+$api->getApiV1Providers($body, $authorization);
 
 
 
@@ -317,7 +330,6 @@ $api->getApiV1Providers($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -353,7 +365,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.CreateProviderApi();
-api.post_api_v1_providers(content_type, authorization, body);
+api.post_api_v1_providers(body, authorization);
 
 
 
@@ -368,7 +380,7 @@ import interswitchng.com.CreateProviderApi;
 ApiClient apiClient = new ApiClient();
 
 CreateProviderApi api = new CreateProviderApi(apiClient);
-api.postApiV1Providers(contentType, authorization, body);
+api.postApiV1Providers(body, authorization);
 
 
 ```
@@ -385,7 +397,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\CreateProviderApi($api_client);
-$api->postApiV1Providers($content_type, $authorization, $body);
+$api->postApiV1Providers($body, $authorization);
 
 
 
@@ -397,8 +409,14 @@ $api->postApiV1Providers($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|code|false|string||
+|name|false|string||
 
 
 ### Responses for status codes
@@ -417,9 +435,7 @@ delete provider
 
 ## delete provider
 ```shell
-curl "/api/v1/providers/55bf414815cc6b04ce2717e2" -X DELETE -d @- << EOF 
-{ }
-EOF
+curl "/api/v1/providers/55bf414815cc6b04ce2717e2" -X DELETE
 ```
 
 ```python
@@ -433,7 +449,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.DeleteProviderApi();
-api.delete_api_v1_providers55bf414815cc6b04ce2717e2(content_type, authorization, body);
+api.delete_api_v1_providers55bf414815cc6b04ce2717e2(authorization);
 
 
 
@@ -448,7 +464,7 @@ import interswitchng.com.DeleteProviderApi;
 ApiClient apiClient = new ApiClient();
 
 DeleteProviderApi api = new DeleteProviderApi(apiClient);
-api.deleteApiV1Providers55bf414815cc6b04ce2717e2(contentType, authorization, body);
+api.deleteApiV1Providers55bf414815cc6b04ce2717e2(authorization);
 
 
 ```
@@ -465,7 +481,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\DeleteProviderApi($api_client);
-$api->deleteApiV1Providers55bf414815cc6b04ce2717e2($content_type, $authorization, $body);
+$api->deleteApiV1Providers55bf414815cc6b04ce2717e2($authorization);
 
 
 
@@ -477,7 +493,6 @@ $api->deleteApiV1Providers55bf414815cc6b04ce2717e2($content_type, $authorization
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -513,7 +528,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.UpdateProviderApi();
-api.put_api_v1_providers(content_type, authorization, body);
+api.put_api_v1_providers(body, authorization);
 
 
 
@@ -528,7 +543,7 @@ import interswitchng.com.UpdateProviderApi;
 ApiClient apiClient = new ApiClient();
 
 UpdateProviderApi api = new UpdateProviderApi(apiClient);
-api.putApiV1Providers(contentType, authorization, body);
+api.putApiV1Providers(body, authorization);
 
 
 ```
@@ -545,7 +560,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\UpdateProviderApi($api_client);
-$api->putApiV1Providers($content_type, $authorization, $body);
+$api->putApiV1Providers($body, $authorization);
 
 
 
@@ -557,8 +572,15 @@ $api->putApiV1Providers($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|code|false|string||
+|name|false|string||
+|id|false|string||
 
 
 ### Responses for status codes
@@ -593,7 +615,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.GetProviderApi();
-api.get_api_v1_providers55bf47af15cc6b05a0c16062(content_type, authorization, body);
+api.get_api_v1_providers55bf47af15cc6b05a0c16062(body, authorization);
 
 
 
@@ -608,7 +630,7 @@ import interswitchng.com.GetProviderApi;
 ApiClient apiClient = new ApiClient();
 
 GetProviderApi api = new GetProviderApi(apiClient);
-api.getApiV1Providers55bf47af15cc6b05a0c16062(contentType, authorization, body);
+api.getApiV1Providers55bf47af15cc6b05a0c16062(body, authorization);
 
 
 ```
@@ -625,7 +647,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\GetProviderApi($api_client);
-$api->getApiV1Providers55bf47af15cc6b05a0c16062($content_type, $authorization, $body);
+$api->getApiV1Providers55bf47af15cc6b05a0c16062($body, $authorization);
 
 
 
@@ -637,7 +659,6 @@ $api->getApiV1Providers55bf47af15cc6b05a0c16062($content_type, $authorization, $
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -673,7 +694,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.CreateTokenRequestorApi();
-api.post_api_v1_requestors(content_type, authorization, body);
+api.post_api_v1_requestors(body, authorization);
 
 
 
@@ -688,7 +709,7 @@ import interswitchng.com.CreateTokenRequestorApi;
 ApiClient apiClient = new ApiClient();
 
 CreateTokenRequestorApi api = new CreateTokenRequestorApi(apiClient);
-api.postApiV1Requestors(contentType, authorization, body);
+api.postApiV1Requestors(body, authorization);
 
 
 ```
@@ -705,7 +726,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\CreateTokenRequestorApi($api_client);
-$api->postApiV1Requestors($content_type, $authorization, $body);
+$api->postApiV1Requestors($body, $authorization);
 
 
 
@@ -717,8 +738,16 @@ $api->postApiV1Requestors($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|code|false|string||
+|oauth2ClientId|false|string||
+|providerId|false|string||
+|name|false|string||
 
 
 ### Responses for status codes
@@ -753,7 +782,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.GetTokenRequestorApi();
-api.get_api_v1_requestors(content_type, authorization, body);
+api.get_api_v1_requestors(body, authorization);
 
 
 
@@ -768,7 +797,7 @@ import interswitchng.com.GetTokenRequestorApi;
 ApiClient apiClient = new ApiClient();
 
 GetTokenRequestorApi api = new GetTokenRequestorApi(apiClient);
-api.getApiV1Requestors(contentType, authorization, body);
+api.getApiV1Requestors(body, authorization);
 
 
 ```
@@ -785,7 +814,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\GetTokenRequestorApi($api_client);
-$api->getApiV1Requestors($content_type, $authorization, $body);
+$api->getApiV1Requestors($body, $authorization);
 
 
 
@@ -797,7 +826,6 @@ $api->getApiV1Requestors($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -833,7 +861,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.GetTokenRequestorsApi();
-api.get_api_v1_requestors(content_type, authorization, body);
+api.get_api_v1_requestors(body, authorization);
 
 
 
@@ -848,7 +876,7 @@ import interswitchng.com.GetTokenRequestorsApi;
 ApiClient apiClient = new ApiClient();
 
 GetTokenRequestorsApi api = new GetTokenRequestorsApi(apiClient);
-api.getApiV1Requestors(contentType, authorization, body);
+api.getApiV1Requestors(body, authorization);
 
 
 ```
@@ -865,7 +893,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\GetTokenRequestorsApi($api_client);
-$api->getApiV1Requestors($content_type, $authorization, $body);
+$api->getApiV1Requestors($body, $authorization);
 
 
 
@@ -877,7 +905,6 @@ $api->getApiV1Requestors($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -913,7 +940,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.UpdateTokenRequestorApi();
-api.put_api_v1_requestors(content_type, authorization, body);
+api.put_api_v1_requestors(body, authorization);
 
 
 
@@ -928,7 +955,7 @@ import interswitchng.com.UpdateTokenRequestorApi;
 ApiClient apiClient = new ApiClient();
 
 UpdateTokenRequestorApi api = new UpdateTokenRequestorApi(apiClient);
-api.putApiV1Requestors(contentType, authorization, body);
+api.putApiV1Requestors(body, authorization);
 
 
 ```
@@ -945,7 +972,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\UpdateTokenRequestorApi($api_client);
-$api->putApiV1Requestors($content_type, $authorization, $body);
+$api->putApiV1Requestors($body, $authorization);
 
 
 
@@ -957,8 +984,17 @@ $api->putApiV1Requestors($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|code|false|string||
+|oauth2ClientId|false|string||
+|providerId|false|string||
+|name|false|string||
+|id|false|string||
 
 
 ### Responses for status codes
@@ -977,9 +1013,7 @@ delete token requestor
 
 ## delete token requestor
 ```shell
-curl "/api/v1/requestors/55c8705515cc6b2f785b1387" -X DELETE -d @- << EOF 
-{ }
-EOF
+curl "/api/v1/requestors/55c8705515cc6b2f785b1387" -X DELETE
 ```
 
 ```python
@@ -993,7 +1027,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.DeleteTokenRequestorApi();
-api.delete_api_v1_requestors55c8705515cc6b2f785b1387(content_type, authorization, body);
+api.delete_api_v1_requestors55c8705515cc6b2f785b1387(authorization);
 
 
 
@@ -1008,7 +1042,7 @@ import interswitchng.com.DeleteTokenRequestorApi;
 ApiClient apiClient = new ApiClient();
 
 DeleteTokenRequestorApi api = new DeleteTokenRequestorApi(apiClient);
-api.deleteApiV1Requestors55c8705515cc6b2f785b1387(contentType, authorization, body);
+api.deleteApiV1Requestors55c8705515cc6b2f785b1387(authorization);
 
 
 ```
@@ -1025,7 +1059,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\DeleteTokenRequestorApi($api_client);
-$api->deleteApiV1Requestors55c8705515cc6b2f785b1387($content_type, $authorization, $body);
+$api->deleteApiV1Requestors55c8705515cc6b2f785b1387($authorization);
 
 
 
@@ -1037,7 +1071,6 @@ $api->deleteApiV1Requestors55c8705515cc6b2f785b1387($content_type, $authorizatio
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -1073,7 +1106,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.GetTokenRequestorDomainsApi();
-api.get_api_v1_requestors55c8817415cc6b300ec4753a_domains(content_type, authorization, body);
+api.get_api_v1_requestors55c8817415cc6b300ec4753a_domains(body, authorization);
 
 
 
@@ -1088,7 +1121,7 @@ import interswitchng.com.GetTokenRequestorDomainsApi;
 ApiClient apiClient = new ApiClient();
 
 GetTokenRequestorDomainsApi api = new GetTokenRequestorDomainsApi(apiClient);
-api.getApiV1Requestors55c8817415cc6b300ec4753aDomains(contentType, authorization, body);
+api.getApiV1Requestors55c8817415cc6b300ec4753aDomains(body, authorization);
 
 
 ```
@@ -1105,7 +1138,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\GetTokenRequestorDomainsApi($api_client);
-$api->getApiV1Requestors55c8817415cc6b300ec4753aDomains($content_type, $authorization, $body);
+$api->getApiV1Requestors55c8817415cc6b300ec4753aDomains($body, $authorization);
 
 
 
@@ -1117,7 +1150,6 @@ $api->getApiV1Requestors55c8817415cc6b300ec4753aDomains($content_type, $authoriz
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -1153,7 +1185,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.CreateTokenRequestorDomainApi();
-api.post_api_v1_requestors563c68f76aa94f1902caa8ff_domains(content_type, authorization, body);
+api.post_api_v1_requestors563c68f76aa94f1902caa8ff_domains(body, authorization);
 
 
 
@@ -1168,7 +1200,7 @@ import interswitchng.com.CreateTokenRequestorDomainApi;
 ApiClient apiClient = new ApiClient();
 
 CreateTokenRequestorDomainApi api = new CreateTokenRequestorDomainApi(apiClient);
-api.postApiV1Requestors563c68f76aa94f1902caa8ffDomains(contentType, authorization, body);
+api.postApiV1Requestors563c68f76aa94f1902caa8ffDomains(body, authorization);
 
 
 ```
@@ -1185,7 +1217,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\CreateTokenRequestorDomainApi($api_client);
-$api->postApiV1Requestors563c68f76aa94f1902caa8ffDomains($content_type, $authorization, $body);
+$api->postApiV1Requestors563c68f76aa94f1902caa8ffDomains($body, $authorization);
 
 
 
@@ -1197,8 +1229,13 @@ $api->postApiV1Requestors563c68f76aa94f1902caa8ffDomains($content_type, $authori
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|type|false|string||
 
 
 ### Responses for status codes
@@ -1217,9 +1254,7 @@ delete token requestor domain
 
 ## delete token requestor domain
 ```shell
-curl "/api/v1/requestors/55c8817415cc6b300ec4753a/domains/55c8855315cc6b30318f1ef9" -X DELETE -d @- << EOF 
-{ }
-EOF
+curl "/api/v1/requestors/55c8817415cc6b300ec4753a/domains/55c8855315cc6b30318f1ef9" -X DELETE
 ```
 
 ```python
@@ -1233,7 +1268,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.DeleteTokenRequestorDomainApi();
-api.delete_api_v1_requestors55c8817415cc6b300ec4753a_domains55c8855315cc6b30318f1ef9(content_type, authorization, body);
+api.delete_api_v1_requestors55c8817415cc6b300ec4753a_domains55c8855315cc6b30318f1ef9(authorization);
 
 
 
@@ -1248,7 +1283,7 @@ import interswitchng.com.DeleteTokenRequestorDomainApi;
 ApiClient apiClient = new ApiClient();
 
 DeleteTokenRequestorDomainApi api = new DeleteTokenRequestorDomainApi(apiClient);
-api.deleteApiV1Requestors55c8817415cc6b300ec4753aDomains55c8855315cc6b30318f1ef9(contentType, authorization, body);
+api.deleteApiV1Requestors55c8817415cc6b300ec4753aDomains55c8855315cc6b30318f1ef9(authorization);
 
 
 ```
@@ -1265,7 +1300,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\DeleteTokenRequestorDomainApi($api_client);
-$api->deleteApiV1Requestors55c8817415cc6b300ec4753aDomains55c8855315cc6b30318f1ef9($content_type, $authorization, $body);
+$api->deleteApiV1Requestors55c8817415cc6b300ec4753aDomains55c8855315cc6b30318f1ef9($authorization);
 
 
 
@@ -1277,7 +1312,6 @@ $api->deleteApiV1Requestors55c8817415cc6b300ec4753aDomains55c8855315cc6b30318f1e
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
 
 
@@ -1313,7 +1347,7 @@ apiClient = client.ApiClient("")
 
 
 api = client.TokenInfoApi();
-api.get_api_v1_tokens5123451913660370100(content_type, authorization, body);
+api.get_api_v1_tokens5123451913660370100(body, authorization);
 
 
 
@@ -1328,7 +1362,7 @@ import interswitchng.com.TokenInfoApi;
 ApiClient apiClient = new ApiClient();
 
 TokenInfoApi api = new TokenInfoApi(apiClient);
-api.getApiV1Tokens5123451913660370100(contentType, authorization, body);
+api.getApiV1Tokens5123451913660370100(body, authorization);
 
 
 ```
@@ -1345,7 +1379,7 @@ $api_client = new Swagger\Client\ApiClient('');
 
 
 $api = new Swagger\Client\TokenInfoApi($api_client);
-$api->getApiV1Tokens5123451913660370100($content_type, $authorization, $body);
+$api->getApiV1Tokens5123451913660370100($body, $authorization);
 
 
 
@@ -1357,14 +1391,20 @@ $api->getApiV1Tokens5123451913660370100($content_type, $authorization, $body);
 ### Header Parameters
 |Parameter|Required|Type|Description|
 |----|----|----|----|
-|Content-Type|true|string||
 |Authorization|true|string||
+
+
+### Body Parameters
+|Parameter|Required|Type|Description|
+|----|----|----|----|
+|token|false|string||
 
 
 ### Responses for status codes
 |default|
 |----|
 ||
+
 
 
 
